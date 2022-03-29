@@ -31,6 +31,13 @@
             <!--app:popExitAnim="@anim/slide_out_right" />-->
         <!-- TODO END STEP 7.1 -->
 
+        <action
+            android:id="@+id/next"
+            app:destination="@id/flow_step_one_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -47,7 +54,11 @@
             app:destination="@+id/flow_step_two_dest">
         </action>
     </fragment>
-
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.example.android.codelabs.navigation.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_fragment" />
     <fragment
         android:id="@+id/flow_step_two_dest"
         android:name="com.example.android.codelabs.navigation.FlowStepFragment"
@@ -83,8 +94,14 @@
             android:defaultValue="Android!"/>
         <!-- TODO STEP 11.1 - Add a deep link to www.example.com/{myarg}/ -->
 
-        <!--<deepLink app:uri="www.example.com/{myarg}" />-->
+        <deepLink app:uri="www.example.com/{myarg}" />
+
 
         <!-- TODO END STEP 11.1 -->
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.android.codelabs.navigation.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
 </navigation>
